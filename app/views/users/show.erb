@@ -1,0 +1,11 @@
+<%= render 'shared/title', title: "#{@user.name}'s profile" %>
+
+<div align="center">
+<%= link_to "Back to home", root_path, class: 'btn btn-primary' %>
+<% if logged_in? && (@user==current_user)  %>
+  <%= link_to "Edit your profile", edit_user_path(@user), class: 'btn btn-warning' %>
+<%end %>
+</div>
+
+<h4 align="center"><%= @user.name %>'s posts</h4>
+<%= render 'posts/posts', obj: @user.posts %>

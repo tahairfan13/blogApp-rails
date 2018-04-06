@@ -1,0 +1,7 @@
+<% flash.each do |name, msg| %>
+  <div class="alert alert-<%= name %>">
+    <!-- Below methood is used to apply the close property to our flash -->
+    <a href="#" class="close" data-dismiss="alert">×</a>
+    <%= msg %>
+  </div>
+<% end %>

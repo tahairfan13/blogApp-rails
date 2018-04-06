@@ -1,0 +1,26 @@
+<% obj.each do |post| %>
+
+  <h2>
+    <%= post.title %>
+  </h2>
+  <p class="lead">
+    by <%=link_to post.user.name, user_path(post.user) %>
+  </p>
+  <p> Posted  <%= time_ago_in_words(post.created_at)  %> ago</p>
+  <hr>
+  <%= image_tag(post.image_url.to_s, :alt => "blog Image" , :class => "img-responsive") %>
+  <hr>
+  <p><%= post.description %></p>
+
+  <%= link_to "Read More",post_path(post), class: "btn btn-primary"  %>
+
+  <% if logged_in? && (post.user==current_user)  %>
+    <%= link_to "Edit this Post", edit_post_path(post), class: 'btn btn-warning' %>
+    <%= link_to "Delete this Post",post_path(post), method: :delete , class: 'btn btn-danger' %>
+
+  <% end %>
+  <br>
+  <br>
+
+
+<% end %>

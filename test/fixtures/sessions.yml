@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  stoken: MyString
+  sign_in_status: false
+  user: one
+
+two:
+  stoken: MyString
+  sign_in_status: false
+  user: two
