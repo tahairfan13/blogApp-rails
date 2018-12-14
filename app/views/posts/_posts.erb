@@ -10,7 +10,7 @@
 
   <div>
     <% if post.description %>
-      <%= post.description.html_safe %>
+      <%= truncate(post.description.html_safe, length: 20) %>
     <% end %>
   </div>
   <%= link_to "Read More",post_path(post), class: "btn btn-primary"  %>
