@@ -42,9 +42,20 @@ Rails.application.configure do
   # number of complex assets.
   config.assets.debug = true
 
+
   # Suppress logger output for asset requests.
   config.assets.quiet = true
 
+  config.paperclip_defaults = {
+      storage: :s3,
+      s3_credentials: {
+          bucket: "vsdashboard",
+          access_key_id:"AKIAJNZMCH5QC635FCTQ",
+          secret_access_key: "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",
+          s3_region: "us-east-1",
+          s3_host_name:"s3.amazonaws.com"
+      }
+  }
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
 

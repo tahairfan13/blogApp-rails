@@ -51,6 +51,17 @@ Rails.application.configure do
   # when problems arise.
   config.log_level = :debug
 
+  config.paperclip_defaults = {
+      storage: :s3,
+      s3_credentials: {
+          bucket: "vsdashboard",
+          access_key_id:"AKIAJNZMCH5QC635FCTQ",
+          secret_access_key: "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",
+          s3_region: "us-east-1",
+          s3_host_name:"s3.amazonaws.com"
+      }
+  }
+
   # Prepend all log lines with the following tags.
   config.log_tags = [ :request_id ]
 

@@ -7,11 +7,12 @@
     by <%=link_to post.user.name, user_path(post.user) %>
   </p>
   <p> Posted  <%= time_ago_in_words(post.created_at)  %> ago</p>
-  <hr>
-  <%= image_tag(post.image_url.to_s, :alt => "blog Image" , :class => "img-responsive") %>
-  <hr>
-  <p><%= post.description %></p>
 
+  <div>
+    <% if post.description %>
+      <%= post.description.html_safe %>
+    <% end %>
+  </div>
   <%= link_to "Read More",post_path(post), class: "btn btn-primary"  %>
 
   <% if logged_in? && (post.user==current_user)  %>
